@@ -1,0 +1,7 @@
+<suite name="Parallel Testing Suite">
+    <test name="Parallel Tests" parallel="methods">
+        <classes>
+            <class name="is.symphony.qa.ExampleTests" />
+        </classes>
+    </test>
+</suite>
