@@ -1,8 +1,6 @@
 package is.symphony.qa.browser;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class DriverManager {
 
@@ -29,7 +27,7 @@ public class DriverManager {
      * then stores it in the "drivers" collection with current Thread Id as a reference to it.
      */
     private static void setDriver() {
-        drivers.set(getChromeDriver());
+        drivers.set(BrowserFactory.getChromeDriver());
     }
 
     /**
@@ -37,17 +35,5 @@ public class DriverManager {
      */
     public static void removeDriver() {
         drivers.remove();
-    }
-
-
-    /**
-     * Simple method to handle ChromeDriver instantiation using the fantastic
-     * WebDriverManager library.
-     *
-     * @return ChromeDriver instance.
-     */
-    static ChromeDriver getChromeDriver() {
-        WebDriverManager.chromedriver().setup();
-        return new ChromeDriver();
     }
 }
